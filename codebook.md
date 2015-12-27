@@ -1,13 +1,13 @@
 # c3FinalProject
 codebook.md
 
-columnheader
+### columnheader
 
 subjectlabels
---Person test subject 1-30
+   * Person test subject 1-30
 
 activitylabels
---Activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+   * Activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
 timeBodyAccelerometerMeanX                        
 timeBodyAccelerometerMeanY                          
