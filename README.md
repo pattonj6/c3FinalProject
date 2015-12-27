@@ -2,13 +2,13 @@
 c3GetDataFinalProject
 
 
-# Human Activity Recognition Using Smartphones - A Summarized Tidy Dataset
+Human Activity Recognition Using Smartphones - A Summarized Tidy Dataset
 ==================================================================
 pattonj6
 12/19/2015
 
 
-# Summarize Steps - making tidy data:
+Summarize Steps - making tidy data:
 =================================================================
 The "original" dataset (reference [1]) contained a split data test set (21 person subjects) and training set (9 person subjects) of movement data collected
 from a Samsung Galaxy IIs smartphone accelerometer and gyroscope. We created a tidy data set of the data, following these steps:
@@ -20,7 +20,13 @@ from a Samsung Galaxy IIs smartphone accelerometer and gyroscope. We created a t
    5. We present the MEAN (average) of the mean and standard deviation columns in the "original "dataset, grouped by subject and activity.
    6. Running the 'run_analysis.R' code on the "original" data (step1) in your working directory will replicate the tidy data set output. (R Version 3.2.2 or later)
 
-# "Original" Dataset Details
+The c3FinalProject directory includes the following files:
+=========================================
+- 'README.md'		: info file, shows how to recreate tidy data set
+- 'codebook.md'  	: shows information about the variables
+- 'run_analysis.R'  	: R code to generate tidy data set from "original" dataset folder
+
+"Original" Dataset Details
 =================================================================
 The [original] experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities 
 (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
@@ -34,20 +40,14 @@ was separated using a Butterworth low-pass filter into body acceleration and gra
 low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained 
 by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
-# For each record it is provided:
+For each record it is provided:
 ======================================
 - MEAN (average) of the mean and standard deviation columns in the "original" dataset, grouped by person subject and activity.   
 - Its activity label. 
 - An identifier of the subject who carried out the experiment.
 
-# The dataset includes the following files:
+License:
 =========================================
-- 'README.md'		: info file, shows how to recreate tidy data set
-- 'codebook.md'  	: shows information about the variables
-- 'run_analysis.R'  	: R code to generate tidy data set from "original" dataset folder
-
-#License:
-========
 Dataset was referenced and given free license from:
 
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. 
