@@ -1,13 +1,15 @@
 # c3FinalProject
 codebook.md
 
-### columnheader
+columnheader
 
 subjectlabels
    * Person test subject 1-30
 
+
 activitylabels
    * Activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
 
 timeBodyAccelerometerMeanX                        
 timeBodyAccelerometerMeanY                          
@@ -16,7 +18,8 @@ timeBodyAccelerometerStdX
 timeBodyAccelerometerStdY                            
 timeBodyAccelerometerStdZ   
    * Mean values of mean (Mean) and standard deviation (Std) 3-axial (X,Y,Z) raw signals body acceleration from the accelerometer (total acceleration).  Were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. 
-                      
+         
+             
 timeGravityAccelerometerMeanX
 timeGravityAccelerometerMeanY                     
 timeGravityAccelerometerMeanZ                        
