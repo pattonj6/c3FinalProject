@@ -3,13 +3,16 @@ c3GetDataFinalProject
 
 ==================================================================
 Human Activity Recognition Using Smartphones - A Summarized Tidy Dataset
-jpatton
+pattonj6
 12/19/2015
 
 =================================================================
 The original dataset (reference [1]) contained a test set (21 person subjects) and training set (9 person subjects) of data collected
-from smartphone movement (accelerometer and gyroscope). We combined the separated datasets into a single data table with person subjects 
-and activities performed.  The combined data table was summarized into a "tidy data" set - 1) one observation per row and 2) one variable per column.
+from smartphone movement (accelerometer and gyroscope). 
+
+   * We combined the separated, measurement datasets into a single data table with person subjects 
+and activities performed.  
+   * The combined data table was summarized into a "tidy data" set - 1) one observation per row and 2) one variable per column.
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities 
 (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
