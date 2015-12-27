@@ -1,16 +1,15 @@
 # c3FinalProject
 README.md
-c3GetDataFinalProject
 
 
-Human Activity Recognition Using Smartphones - A Summarized Tidy Dataset
-==================================================================
+### Human Activity Recognition Using Smartphones - A Summarized Tidy Dataset
+
 pattonj6
 12/19/2015
 
 
-Summarize Steps - making tidy data:
-=================================================================
+### Summarize Steps - making tidy data:
+
 The "original" dataset (reference [1]) contained a split data test set (21 person subjects) and training set (9 person subjects) of movement data collected
 from a Samsung Galaxy IIs smartphone accelerometer and gyroscope. We created a tidy data set of the data, following these steps:
 
