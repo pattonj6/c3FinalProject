@@ -20,13 +20,13 @@ from a Samsung Galaxy IIs smartphone accelerometer and gyroscope. We created a t
    5. We present the MEAN (average) of the mean and standard deviation columns in the "original "dataset, grouped by subject and activity.
    6. Running the 'run_analysis.R' code on the "original" data (step1) in your working directory will replicate the tidy data set output. (R Version 3.2.2 or later)
 
-The c3FinalProject directory includes the following files:
+The 'c3FinalProject' github directory includes the following files:
 =========================================
 - 'README.md'		: info file, shows how to recreate tidy data set
 - 'codebook.md'  	: shows information about the variables
 - 'run_analysis.R'  	: R code to generate tidy data set from "original" dataset folder
 
-"Original" Dataset Details
+"Original" Dataset Details:
 =================================================================
 The [original] experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities 
 (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. 
