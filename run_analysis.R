@@ -38,7 +38,6 @@ merged_dataset <- rbind(df_train_X_train, df_test_X_test)
 ## This step puts the column names onto the merged training and test data.  
 ## I use the transpose command, then the colnames to label the larger
 ## dataset.
-
 list(df_features[,2]) -> column_names
 transpose(column_names) -> transposed_column_names
 transposed_column_names -> colnames(merged_dataset)
@@ -46,17 +45,12 @@ transposed_column_names -> colnames(merged_dataset)
 ## I chose to stack the y labels into 1 tall column, then cbind it to the larger dataset.
 ## I did this to avoid a messy column name step, prior, which would have made me add a 
 ## row to get column 1 labeled.
-
 merged_y_column <- rbind(df_train_y_train, df_test_y_test)
 "activitylabels" -> colnames(merged_y_column)
 
 ## I chose to stack the y labels into 1 tall column, then cbind it to the larger dataset.
 ## I did this to avoid a messy column name step, prior, which would have made me add a 
 ## row to get column 1 labeled.
-## I tested the subject test file in the main folder vs the test folder and they are 
-## identical.
-## identical(df_subject_test, df_test_subject_test) == TRUE
-
 merged_y_subject_column <- rbind(df_train_subject_train, df_test_subject_test)
 "subjectlabels" -> colnames(merged_y_subject_column)
 
@@ -67,6 +61,7 @@ merged_w_activity_col <- cbind(merged_y_subject_column, merged_y_column, merged_
 ## convert to data.table
 dt_merged_w_activity_col <- data.table(merged_w_activity_col)
 
+## do a first-pass edit of column names to remove parentheses and dashes.
 valid_column_names <- make.names(names=names(dt_merged_w_activity_col), unique=TRUE, allow_ = FALSE)
 names(dt_merged_w_activity_col) <- valid_column_names
 
@@ -78,7 +73,7 @@ dt_merged_w_activity_col <- dt_merged_w_activity_col[, which(grepl("label|mean|s
                                                                    ignore.case = TRUE)), 
                                                      with=FALSE]
 
-## edit the column names, use alternating capital words.  Remove all the dots, parentheses.
+## edit the column names, use alternating capital words.  Remove all the dots with the gsub command.
 sub("tBodyAcc", "timeBodyAccelerometer", names(dt_merged_w_activity_col)) -> colnames(dt_merged_w_activity_col)
 sub("tGravityAcc", "timeGravityAccelerometer", names(dt_merged_w_activity_col)) -> colnames(dt_merged_w_activity_col)
 sub("tBodyGyro", "timeBodyGyroscope", names(dt_merged_w_activity_col)) -> colnames(dt_merged_w_activity_col)
@@ -93,7 +88,7 @@ sub("fBodyBodyGyro", "frequencyBodyGyroscope", names(dt_merged_w_activity_col)) 
 
 gsub("\\.", "", names(dt_merged_w_activity_col)) -> colnames(dt_merged_w_activity_col)
 
-
+## Replace the activity values with the text-identifier.  This is a tidy data set step.
 ## I am sure there is a more elegant way to do this step, probably with a loop.
 dt_merged_w_activity_col$activitylabels[dt_merged_w_activity_col$activitylabels == 1] <- "WALKING"
 dt_merged_w_activity_col$activitylabels[dt_merged_w_activity_col$activitylabels == 2] <- "WALKING_UPSTAIRS"
@@ -102,13 +97,14 @@ dt_merged_w_activity_col$activitylabels[dt_merged_w_activity_col$activitylabels 
 dt_merged_w_activity_col$activitylabels[dt_merged_w_activity_col$activitylabels == 5] <- "STANDING"
 dt_merged_w_activity_col$activitylabels[dt_merged_w_activity_col$activitylabels == 6] <- "LAYING"
 
-## group by person subject and activity labels 
+## now I have a full data.table with all the data and labels the way I want it.
+## group the data by person subject and activity labels.
 dt_merged_by_sbact <- group_by(dt_merged_w_activity_col, subjectlabels, activitylabels) 
 
-## dt[, lapply(.SD, sum, na.rm=TRUE), by=category ]
-## http://stackoverflow.com/questions/16513827/r-summarizing-multiple-columns-with-data-table
-
+## getting mean of each column is now a simple summarise_each command
 dt_test <- summarise_each(dt_merged_by_sbact, funs(mean))
 
+## resultant data is 180 observations by 88 columns
+## last step outputs to .txt summary, tidy file 
 write.table(dt_test, file = "./data/tidyactivityphone.txt", row.names = FALSE)
 
