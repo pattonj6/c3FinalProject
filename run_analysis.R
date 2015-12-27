@@ -70,8 +70,8 @@ valid_column_names <- make.names(names=names(dt_merged_w_activity_col), unique=T
 names(dt_merged_w_activity_col) <- valid_column_names
 
 ## If I grep out the "label|mean|std" column names I get the columns I want. 
-## Method 2a -- A safe idiom for excluding columns matching a regular expression
-## df3 <- df3[, which(!grepl("^foo$", colnames(df3))), with=FALSE]
+## I chose to leave all 88 columns containing "mean" and "std", rather than try to make 
+## the dataset smaller based on the nuance of the grep with "mean()" or "std()"
 dt_merged_w_activity_col <- dt_merged_w_activity_col[, which(grepl("label|mean|std", 
                                                                    colnames(dt_merged_w_activity_col), 
                                                                    ignore.case = TRUE)), 

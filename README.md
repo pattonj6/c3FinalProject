@@ -1,4 +1,5 @@
 # c3FinalProject
+README.md
 c3GetDataFinalProject
 
 
@@ -25,6 +26,11 @@ The 'c3FinalProject' github directory includes the following files:
 - 'README.md'		: info file, shows how to recreate tidy data set
 - 'codebook.md'  	: shows information about the variables
 - 'run_analysis.R'  	: R code to generate tidy data set from "original" dataset folder
+
+Notes:
+=========================================
+- The units used for the accelerations (total and body) are 'g's (gravity of earth -> 9.80665 m/seg2).
+- The gyroscope units are rad/seg.
 
 "Original" Dataset Details:
 =================================================================
