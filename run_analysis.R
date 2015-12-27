@@ -11,21 +11,25 @@ library(dplyr)
 library(tidyr)
 library(data.table)
 
+if (!file.exists("data")) {
+  dir.create("data")
+}
+
 fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(fileUrl, destfile = "./data/run_analysis.zip")
 
 unzip("./data/run_analysis.zip", exdir = "./data")
 
-setwd("C:/Users/jpatton/Downloads/Coursera/c3_Get_Data/data/UCI HAR Dataset")
+setwd("./data/UCI HAR Dataset")
 df_features <- data.frame(read.table("features.txt", header = FALSE, sep = ""))
 df_activity_labels <- data.frame(read.table("activity_labels.txt", header = FALSE, sep = ""))
 
-setwd("C:/Users/jpatton/Downloads/Coursera/c3_Get_Data/data/UCI HAR Dataset/train")
+setwd("../../data/UCI HAR Dataset/train")
 df_train_subject_train <- data.frame(read.table("subject_train.txt", header = FALSE, sep = ""))
 df_train_X_train <- data.frame(read.table("X_train.txt", header = FALSE, sep = ""))
 df_train_y_train <- data.frame(read.table("y_train.txt", header = FALSE, sep = ""))
 
-setwd("C:/Users/jpatton/Downloads/Coursera/c3_Get_Data/data/UCI HAR Dataset/test")
+setwd("../../../data/UCI HAR Dataset/test")
 df_test_subject_test <- data.frame(read.table("subject_test.txt", header = FALSE, sep = ""))
 df_test_X_test <- data.frame(read.table("X_test.txt", header = FALSE, sep = ""))
 df_test_y_test <- data.frame(read.table("y_test.txt", header = FALSE, sep = ""))
@@ -106,5 +110,5 @@ dt_test <- summarise_each(dt_merged_by_sbact, funs(mean))
 
 ## resultant data is 180 observations by 88 columns
 ## last step outputs to .txt summary, tidy file 
-write.table(dt_test, file = "./data/tidyactivityphone.txt", row.names = FALSE)
+write.table(dt_test, file = "../../../data/tidyactivityphone.txt", row.names = FALSE)
 
