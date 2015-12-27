@@ -3,13 +3,12 @@ codebook.md
 c3GetDataFinalProject
 
 column header
-==============
 
 subjectlabels
-	Person test subject 1-30
+	* Person test subject 1-30
 
 activitylabels
-	Activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+	* Activity: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
 
 timeBodyAccelerometerMeanX                        
 timeBodyAccelerometerMeanY                          
@@ -17,7 +16,7 @@ timeBodyAccelerometerMeanZ
 timeBodyAccelerometerStdX                           
 timeBodyAccelerometerStdY                            
 timeBodyAccelerometerStdZ   
-	Mean values of mean (Mean) and standard deviation (Std) 3-axial (X,Y,Z) raw signals body acceleration from the 
+	* Mean values of mean (Mean) and standard deviation (Std) 3-axial (X,Y,Z) raw signals body acceleration from the 
        	accelerometer (total acceleration).  Were captured at a constant rate of 50 Hz. Then they were filtered using 
 	a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. 
                       
@@ -27,7 +26,7 @@ timeGravityAccelerometerMeanZ
 timeGravityAccelerometerStdX   
 timeGravityAccelerometerStdY                         
 timeGravityAccelerometerStdZ  
-        Mean values of mean (Mean) and standard deviation (Std) 3-axial (X,Y,Z) raw signals gravity acceleration from the 
+        * Mean values of mean (Mean) and standard deviation (Std) 3-axial (X,Y,Z) raw signals gravity acceleration from the 
        	accelerometer (total acceleration).  Were captured at a constant rate of 50 Hz. Then they were filtered using 
 	a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. 
                   
